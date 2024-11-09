@@ -3010,7 +3010,7 @@ data = [
 
 
 # Optional: Save the data to a CSV file
-with open('economic_qna_data.csv', 'w', newline='') as file:
+with open('training_data.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["prompt", "response"])
     writer.writerows(data)

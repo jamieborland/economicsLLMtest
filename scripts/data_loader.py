@@ -4,7 +4,7 @@ import pandas as pd
 from torch.utils.data import Dataset
 
 class EconomicDataset(Dataset):
-    def __init__(self, tokenizer, file_path, max_length=64):
+    def __init__(self, tokenizer, file_path, max_length=128):
         self.data = pd.read_csv(file_path)
         self.tokenizer = tokenizer
         self.max_length = max_length
@@ -20,12 +20,17 @@ class EconomicDataset(Dataset):
         inputs = self.tokenizer(
             input_text,
             max_length=self.max_length,
-            padding="max_length",
-            truncation=True,
+            padding="max_length",  # Pads shorter sequences
+            truncation=True,  # Truncates longer sequences
             return_tensors="pt"
         )
+
+        # Return both the input_ids and labels
+        # GPT-2 uses input_ids as both input and target (labels)
+        labels = inputs["input_ids"].clone()  # Clone input_ids as labels
+
         return {
             "input_ids": inputs["input_ids"].squeeze(),
-            "attention_mask": inputs["attention_mask"].squeeze()
+            "attention_mask": inputs["attention_mask"].squeeze(),
+            "labels": labels.squeeze()  # Add labels for loss calculation
         }
-

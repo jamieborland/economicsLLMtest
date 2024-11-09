@@ -6,6 +6,7 @@ from data_loader import EconomicDataset
 
 # Load the tokenizer and model
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2-medium")
+tokenizer.pad_token = tokenizer.eos_token  # Use eos_token as pad_token
 model = GPT2LMHeadModel.from_pretrained("gpt2-medium")
 
 # Prepare the dataset

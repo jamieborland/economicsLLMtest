@@ -9,7 +9,7 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2-medium")
 model = GPT2LMHeadModel.from_pretrained("gpt2-medium")
 
 # Prepare the dataset
-dataset = EconomicDataset(tokenizer=tokenizer, file_path="data/economic_questions.csv")
+dataset = EconomicDataset(tokenizer=tokenizer, file_path="data/training_data.csv")
 
 # Training arguments
 training_args = TrainingArguments(

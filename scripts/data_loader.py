@@ -4,7 +4,7 @@ import pandas as pd
 from torch.utils.data import Dataset
 
 class EconomicDataset(Dataset):
-    def __init__(self, tokenizer, file_path, max_length=512):
+    def __init__(self, tokenizer, file_path, max_length=64):
         self.data = pd.read_csv(file_path)
         self.tokenizer = tokenizer
         self.max_length = max_length
@@ -14,7 +14,7 @@ class EconomicDataset(Dataset):
 
     def __getitem__(self, idx):
         question = self.data.loc[idx, 'prompt']
-        answer = self.data.loc[idx, 'completion']
+        answer = self.data.loc[idx, 'response']
         input_text = f"{question} {self.tokenizer.eos_token} {answer}"
 
         inputs = self.tokenizer(

@@ -2,6 +2,12 @@ __pycache__/
 *.pyc
 *.pkl
 .DS_Store
-results/
-env/
+
+# Ignore all folders in results, but allow CSV files
+results/*
+!results/*.csv
+
+# Ignore the environment directory
+env/__pycache__/
+
 

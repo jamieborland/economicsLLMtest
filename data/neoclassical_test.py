@@ -235,7 +235,7 @@ test_data += [
      "Relaxed trade regulations reduce barriers, often lowering import prices and increasing market competition.")
 ]
 
-with open('test_data.csv', 'w', newline='') as file:
+with open('data/neoclassical_test_data.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["prompt", "response"])
     writer.writerows(test_data)

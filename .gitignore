@@ -2,11 +2,7 @@ __pycache__/
 *.pyc
 *.pkl
 .DS_Store
-
-# Ignore all folders in results, but allow CSV files
 results/
-
-# Ignore the environment directory
 env/
 
 

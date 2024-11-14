@@ -81,5 +81,5 @@ The CSV contains the test question, the true answer, and the model generated ans
 
 ## Remarks
 
-Note this project was an inital exploration into the idea of fine-tuning LLM's on data to see how accurately it could predict future responses. This is merely a first experiment, and as such little thought was given to the construction of the training and test sets, the model to fune tune. No hyperparameter tuning took place, and fine tuning occured on a laptop, thus epoch counts were kept to 3. 
-This is not a thorough exploration of the use of AI in rpedicitng economic responses.
+Note this project was an inital exploration into the idea of fine-tuning LLM's on data to see how accurately it could predict future responses. This is merely a first experiment, and as such little thought was given to the construction of the training and test sets, or even the model used to fine tune. No hyperparameter tuning took place, and fine tuning occured on a laptop, thus epoch counts were kept to 3. 
+This is not a thorough exploration of the use of AI in predicting economic responses.

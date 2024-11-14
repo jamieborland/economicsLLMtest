@@ -1,6 +1,7 @@
 # Fine-Tuning GPT-2 on Economic Question-Answer Pairs
 
 This project serves as a proof of concept for using AI to predict a person's responses to economic problems.
+
 We fine-tune GPT-2, an open-source language model, on a dataset of economic question-answer pairs. The implementation allows for training on various datasets and generates and evaluates responses based on specific prompts. Evaluation is conducted by comparing the generated answers against a test set of questions and responses.
 
 ## Methodology
@@ -38,7 +39,7 @@ scripts/data
     ```
     python scripts/data/neoclassical.py
    python scripts/data/neoclassical_test.py
- ```
+    ```
 Note, repeat for Keynesian datasets too.   
 
 ## Usage
